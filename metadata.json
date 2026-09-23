@@ -1,0 +1,6 @@
+{
+  "name": "Romantic Apology - From My Heart",
+  "description": "A romantic, aesthetic, and cinematic multi-page experience with smooth heart explosion animation, heartfelt letter, and cinematic MP4 video player.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

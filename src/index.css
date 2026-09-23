@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-script: "Great Vibes", "Alex Brush", cursive;
+  --font-editorial: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  
+  --color-romance-black: #0c080e;
+  --color-romance-deep: #160e18;
+  --color-romance-rose: #f472b6;
+  --color-romance-pink: #fbcfe8;
+  --color-romance-cream: #faf5f0;
+}
+
+@layer base {
+  body {
+    background-color: #0b070d;
+    color: #f7e8ee;
+    font-family: var(--font-sans);
+  }
+}
+
+/* Custom romantic paper texture & grain styling */
+.paper-sheet {
+  background-color: #fcf9f5;
+  color: #2b1f24;
+  box-shadow: 
+    0 20px 50px -10px rgba(0, 0, 0, 0.45),
+    0 0 100px 0 rgba(244, 114, 182, 0.12),
+    inset 0 0 80px rgba(230, 215, 205, 0.35);
+  position: relative;
+}
+
+.paper-sheet::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+  border-radius: inherit;
+  opacity: 0.7;
+}
+
+/* Subtle glowing pulse */
+@keyframes heartPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 15px rgba(244, 114, 182, 0.25)) drop-shadow(0 0 35px rgba(0, 0, 0, 0.8));
+  }
+  25% {
+    transform: scale(1.045);
+    filter: drop-shadow(0 0 24px rgba(244, 114, 182, 0.45)) drop-shadow(0 0 45px rgba(0, 0, 0, 0.9));
+  }
+  40% {
+    transform: scale(1.02);
+  }
+  60% {
+    transform: scale(1.065);
+    filter: drop-shadow(0 0 30px rgba(244, 114, 182, 0.55)) drop-shadow(0 0 50px rgba(0, 0, 0, 0.95));
+  }
+}
+
+.animate-heart-pulse {
+  animation: heartPulse 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.2deg);
+  }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 6s ease-in-out infinite;
+}
+
